@@ -1,0 +1,3 @@
+- name: Update docker-compose.yaml
+        run: |
+          yq e ".services.\"${{ github.event.inputs.service_name }}\".image = \"${{ github.event.inputs.image }}\"" -i docker-compose.yaml
