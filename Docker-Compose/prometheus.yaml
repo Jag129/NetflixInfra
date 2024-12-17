@@ -1,0 +1,41 @@
+global:
+  scrape_interval: 15s # How often to scrape targets by default.
+  evaluation_interval: 15s # How often to evaluate rules.
+
+# A scrape configuration for monitoring Prometheus itself
+scrape_configs:
+- job_name: 'prometheus'
+  static_configs:
+    - targets: ['localhost:9090'] # Prometheus's own metrics
+
+- job_name: 'availability-agent'
+  static_configs:
+    - targets: ['availability-agent:8081'] # Replace with the actual port used by your agent
+
+
+#global:
+#  scrape_interval: 15s   # How often to scrape targets by default.
+#  evaluation_interval: 15s  # How often to evaluate rules.
+#
+#  # Optional, sets the timeout for scraping targets.
+#  scrape_timeout: 10s
+#
+#alerting:
+#  alertmanagers:
+#    - static_configs:
+#        - targets: []
+#
+#rule_files:
+#  # List of alerting rule files to load.
+#  # - "alert_rules.yml"
+#
+#scrape_configs:
+#  # Scrape configuration for Prometheus itself.
+#  - job_name: "availability-agent"
+#    static_configs:
+#      - targets: ["http://availability-agent:8081"]
+#
+#  # Scrape configuration for Docker container metrics.
+#  - job_name: "docker"
+#    static_configs:
+#      - targets: ["http://localhost:9090"]
