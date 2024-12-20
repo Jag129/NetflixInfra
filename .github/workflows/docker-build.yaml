@@ -14,6 +14,10 @@ on:
 
 permissions:
   contents: write
+
+env:
+  EC2_PUBLIC_IP: 16.171.67.235
+
   
 jobs:
   UpdateComposeYaml:
