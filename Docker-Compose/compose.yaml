@@ -54,7 +54,7 @@ services:
     networks:
       - private-net-2
   $SERVICE_NAME:
-    image: jag129/net_front:0:0:2
+    image: jag129/net_front:0:0:3
 #    volumes:
 #      - prometheus-data:/etc/prometheus
 #      - ./prometheus.yaml:/etc/prometheus/prometheus.yml
