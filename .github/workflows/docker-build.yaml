@@ -31,7 +31,7 @@ jobs:
           SERVICE_NAME: ${{ github.event.inputs.service_name }}
           IMAGE_NAME: ${{ github.event.inputs.image }}
         run: |
-          yq e ".services.\$SERVICE_NAME.image = \"${{ github.event.inputs.image }}\"" -i Docker-Compose/compose.yaml
+          yq e ".services.$SERVICE_NAME.image = \"${{ github.event.inputs.image }}\"" -i Docker-Compose/compose.yaml
       - name: commit and push
         run: |
           git config --local user.email "github@actions!"
