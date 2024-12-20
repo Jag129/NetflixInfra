@@ -35,7 +35,7 @@ jobs:
             yq e ".services.\"${{ github.event.inputs.service_name }}\".image = \"${{ github.event.inputs.image }}\"" -i Docker-Compose/compose.yaml
       - name: commit and push
         run: |
-          git config --local user.email "github@kactions!"
+          git config --local user.email "github@actions!"
           git config --local user.name "auto-test"
 
           git add Docker-Compose/compose.yaml && git commit -m "Update ${{ github.event.inputs.service_name }} image to ${{ github.event.inputs.image }}"
