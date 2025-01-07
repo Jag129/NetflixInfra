@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: net_cat
+  labels:
+    app: net_cat
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: net_cat
+  template:
+    metadata:
+        labels:
+          app: net_cat
+    spec:
+      containers:
+      - name: netflix_cat
+        image: jag129/net_cat:0.0.1
+
+---
+# 2. net_cat k8s yaml for service
+apiVersion: v1
+kind: Service
+metadata:
+  name: net_cat
+  labels:
+    app: net_cat
+spec:
+  selector:
+    app: net_cat
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
