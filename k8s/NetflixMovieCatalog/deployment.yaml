@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: net_cat
+  name: netflixcat
   labels:
-    app: net_cat
+    app: netflixcat
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: net_cat
+      app: netflixcat
   template:
     metadata:
         labels:
-          app: net_cat
+          app: netflixcat
     spec:
       containers:
       - name: netflix_cat
@@ -23,12 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: net_cat
+  name: netflixcat
   labels:
-    app: net_cat
+    app: netflixcat
 spec:
   selector:
-    app: net_cat
+    app: netflixcat
   ports:
     - protocol: TCP
       port: 8080
