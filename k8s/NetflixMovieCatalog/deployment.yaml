@@ -15,7 +15,7 @@ spec:
           app: netflixcat
     spec:
       containers:
-      - name: netflix_cat
+      - name: netflixcat
         image: jag129/net_cat:0.0.1
 
 ---
