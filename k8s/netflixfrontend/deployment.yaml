@@ -19,9 +19,8 @@ spec:
         image: jag129/net_front:0.0.1
         env:
         - name: MOVIE_CATALOG_SERVICE
-          value: "http://netcat:8080"
-        - name: REDIS_URL
-          value: "redis-service:6379"
+          value: "http://net_cat:8080"
+
 ---
 apiVersion: v1
 kind: Service
