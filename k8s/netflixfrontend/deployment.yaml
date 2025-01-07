@@ -19,7 +19,7 @@ spec:
         image: jag129/net_front:0.0.1
         env:
         - name: MOVIE_CATALOG_SERVICE
-          value: "http://net_cat:8080"
+          value: "http://netflixcat:8081"
 
 ---
 apiVersion: v1
