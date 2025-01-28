@@ -20,6 +20,10 @@ spec:
         env:
         - name: MOVIE_CATALOG_SERVICE
           value: "http://netflixcat:8080"
+        - name: AWS_SQS_QUEUE_URL
+          value: "https://sqs.eu-north-1.amazonaws.com/352708296901/yishai-netflix-events"
+        - name: AWS_REGION
+          value: "EU-NORTH-1"
 
 ---
 apiVersion: v1
